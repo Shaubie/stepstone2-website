@@ -3,56 +3,138 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Xabier — About Me</title>
+<title>Xabier — About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    --bg:   #f7f6f3;
+    --ink:  #1c1c1e;
+    --muted:#77736c;
+    --rule: #e0ddd6;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141416; --ink:#eceae6; --muted:#918d86; --rule:#2c2c30; }
+  }
+
+  * { box-sizing: border-box; }
   body {
     margin: 0;
-    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    color: #1a1a1a;
-    background: #faf9f7;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
-  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 .3em; letter-spacing: -.02em; }
-  .sub { color: #6b6b6b; margin: 0 0 2.5em; font-size: 1.05rem; }
-  h2 { font-size: 1.15rem; margin: 2.5em 0 .8em; letter-spacing: .01em; }
-  p { margin: 0 0 1.1em; }
-  figure { margin: 0; }
-  img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
-  figcaption { margin-top: .8em; font-size: .9rem; color: #6b6b6b; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #16161a; color: #e8e6e3; }
-    .sub, figcaption { color: #9a9a9a; }
+  main { max-width: 680px; margin: 0 auto; padding: 88px 24px 112px; }
+
+  header { margin-bottom: 64px; }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    margin: 0 0 .35em;
+  }
+  .kicker {
+    margin: 0;
+    color: var(--muted);
+    font-size: .95rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: .82rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  section { margin-bottom: 64px; }
+  section:last-child { margin-bottom: 0; }
+
+  p { margin: 0 0 1.15em; }
+  p:last-child { margin-bottom: 0; }
+  .lead { font-size: 1.12rem; }
+
+  figure { margin: 0 0 22px; }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 12px 32px rgba(0,0,0,.10);
+  }
+  figcaption {
+    margin-top: 14px;
+    font-size: .9rem;
+    color: var(--muted);
+  }
+  figcaption .title { font-family: var(--serif); font-style: italic; color: var(--ink); }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    font-size: .85rem;
+    color: var(--muted);
   }
 </style>
 </head>
 <body>
 <main>
-  <h1>Xabier</h1>
-  <p class="sub">Senior, Data Science — University of Wisconsin–Madison</p>
+  <header>
+    <h1>Xabier</h1>
+    <p class="kicker">Data Science &middot; UW&ndash;Madison</p>
+  </header>
 
-  <h2>About</h2>
-  <p>
-    I'm a senior studying Data Science at UW–Madison. My coursework has taken me
-    through statistics, machine learning, and data engineering, and I'm most
-    interested in the part where messy real-world data turns into something a
-    person can actually reason about.
-  </p>
-  <p>
-    Outside of class I spend time building small projects, reading, and looking
-    at art.
-  </p>
+  <section>
+    <h2>About</h2>
+    <p class="lead">
+      I'm a senior studying data science at the University of Wisconsin&ndash;Madison.
+    </p>
+    <p>
+      Most of what I enjoy about the field happens before the model does: getting
+      messy, inconsistent, real-world data into a shape where it can actually
+      answer a question. Statistics and machine learning are the tools, but the
+      interesting work is deciding what's worth asking.
+    </p>
+    <p>
+      Outside of coursework I build small projects, read, and spend more time
+      than I should looking at paintings.
+    </p>
+  </section>
 
-  <h2>A painting I love</h2>
-  <figure>
-    <img src="guernica3.jpg" alt="Guernica by Pablo Picasso — a large monochrome mural depicting the bombing of the Basque town of Gernika.">
-    <figcaption><em>Guernica</em> — Pablo Picasso, 1937.</figcaption>
-  </figure>
-  <p>
-    Picasso painted <em>Guernica</em> in response to the bombing of the Basque
-    town of Gernika in 1937. It's all greys and blacks, no color at all, and it
-    still manages to be the loudest painting I've ever stood in front of.
-  </p>
+  <section>
+    <h2>A painting I keep coming back to</h2>
+    <figure>
+      <img src="guernica3.jpg"
+           alt="Guernica by Pablo Picasso: a wide monochrome mural of fractured figures, a screaming horse, a bull, and a woman holding a dead child, painted in response to the 1937 bombing of the Basque town of Gernika.">
+      <figcaption><span class="title">Guernica</span> &mdash; Pablo Picasso, 1937. Oil on canvas.</figcaption>
+    </figure>
+    <p>
+      Picasso painted it within weeks of the bombing of Gernika in April 1937.
+      There is no color in it at all &mdash; only greys, blacks, and a bruised
+      white &mdash; and it is still the loudest painting I have ever stood in
+      front of. Every figure is mid-scream or mid-collapse, and the whole thing
+      is lit by a single bare bulb, as if the scene were being documented rather
+      than composed.
+    </p>
+  </section>
+
+  <footer>
+    Built for DS 501, Stepstone 2.
+  </footer>
 </main>
 </body>
 </html>
